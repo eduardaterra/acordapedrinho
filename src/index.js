@@ -2,6 +2,15 @@ import { Client, Intents } from "discord.js"
 import dotenv from "dotenv"
 import * as data from "./config.json" assert {type: "json"};
 
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {
+    'Content-type': 'text/plain'
+  });
+  res.write('oi pedro');
+  res.end();
+}).listen(4000);
+
 dotenv.config({ path: '../.env' })
 
 const config = data.default.config
