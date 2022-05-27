@@ -1,15 +1,7 @@
 import { Client, Intents } from "discord.js"
 import dotenv from "dotenv"
 import * as data from "./config.json" assert {type: "json"};
-import http from 'http'
-
-http.createServer((req, res) => {
-  res.writeHead(200, {
-    'Content-type': 'text/plain'
-  });
-  res.write('oi pedro');
-  res.end();
-}).listen(4000);
+import { keepAlive } from "./server.js"
 
 dotenv.config({ path: '../.env' })
 
@@ -17,6 +9,7 @@ const config = data.default.config
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
 
+keepAlive()
 client.login(process.env.DISCORD_BOT_TOKEN)
 
 client.once("ready", () => {
