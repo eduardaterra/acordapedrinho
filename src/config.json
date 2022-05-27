@@ -1,5 +1,22 @@
 {
   "config": {
-    "triggerMessage": "que comece o inferno astral do pedro"
+    "triggerMessage": "que comece o inferno astral do pedro",
+    "botMessages": [
+      "não sei mais",
+      "pra onde ir",
+      "já que",
+      "a noite foi...",
+      "ACORDA PEDRINHO",
+      "que hoje tem campeonato",
+      "vem dançar comigo",
+      "vai ver que eu te esculacho",
+      "sei que não dá pra ver",
+      "mas cê vai ver que hoje não tem chocolate",
+      "nem de segunda a sexta-feira",
+      "não adianta treinar",
+      "cê pode vir, mas vem agora",
+      "não enrola, rebola",
+      "na hora de ir embora, cê chora"
+    ]
   }
 }
