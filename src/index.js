@@ -27,12 +27,17 @@ client.on('message', async message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(config.triggerMessage)) return;
 
-  config.botMessages.map(musicLine => {
-    setTimeout(() => message.channel.send(musicLine), 10000)
-  })
+  const threadMessages = () => {
+    config.botMessages.map(musicLine =>
+      setTimeout(() => message.channel.send(musicLine), 10000)
+    )
+  }
 
-  setInterval(() => config.botMessages.map(musicLine => {
-    setTimeout(() => message.channel.send(musicLine), 10000)
-  }), 3600000)
+  const threadMessagesEveryHour = setInterval(threadMessages, 3600000);
+
+  setTimeout(() => {
+    clearInterval(threadMessagesEveryHour);
+    message.channel.send(config.endThreadMessages)
+  }, 36000000)
 }
 )
