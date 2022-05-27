@@ -1,8 +1,8 @@
 import { Client, Intents } from "discord.js"
 import dotenv from "dotenv"
 import * as data from "./config.json" assert {type: "json"};
+import http from 'http'
 
-const http = require('http');
 http.createServer((req, res) => {
   res.writeHead(200, {
     'Content-type': 'text/plain'
